@@ -4,10 +4,16 @@ var pacientes = document.querySelectorAll(".paciente");
 var tabela = document.querySelector("table");
 
  tabela.addEventListener("dblclick", function(event){
-    var alvoEvento = event.target;
-    var paiDoAlvo = alvoEvento.parentNode; //Tr = paciente = remover
+    // var alvoEvento = event.target;          somente vistual 
+    //var paiDoAlvo = alvoEvento.parentNode; Tr = paciente = remover
 
-    paiDoAlvo.remove();
+    //adicionamos a classe do css de opacidade, para fazer uma transição ao tirar o item
+    event.target.parentNode.classList.add("fadeOut"); 
+
+    setTimeout(function(){                              
+        event.target.parentNode.remove();           //setTimeout para adicionar um delay a ação.      
+    },500);                                        // nesse caso de "500ms"
+         
  })
 
 
