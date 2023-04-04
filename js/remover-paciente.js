@@ -1,8 +1,8 @@
 //chamamos a classe paciente                               
 var pacientes = document.querySelectorAll(".paciente"); 
-
+//chamamos a tabela 
 var tabela = document.querySelector("table");
-
+ //evento de duplo click   
  tabela.addEventListener("dblclick", function(event){
     // var alvoEvento = event.target;          somente vistual 
     //var paiDoAlvo = alvoEvento.parentNode; Tr = paciente = remover
@@ -15,7 +15,6 @@ var tabela = document.querySelector("table");
     },500);                                        // nesse caso de "500ms"
          
  })
-
 
 /*
 diferença entre um "this" e um "target" é que o target 
