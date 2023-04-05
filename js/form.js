@@ -8,8 +8,7 @@ botaoAdicionar.addEventListener("click", function(event){
     
     // criando variaveis com os  valores internos do formulario
     var paciente = obtemPacienteDoFormulario(form);   
-    //criando uma nova tabela "TR"    
-    var pacienteTr = montaTr(paciente);
+  
      //variavel de erro 
      var erros = validaPaciente(paciente);
         console.log(erros);
@@ -18,10 +17,9 @@ botaoAdicionar.addEventListener("click", function(event){
         exibeMensagemDeErro(erros);
         return;
     }
-    //Adiciona o novo pacienteTr dentro da tabela
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
-
+    //chamamos a função. add paciente a  tabela
+    AdicionaPacienteNaTabela(paciente);
+    
     // reseta o formulario, deixa em branco para colocar outro paciente.
     form.reset(); 
     // criando uma variavel para pegar novamente o ul para apagar seu conteudo
@@ -29,6 +27,14 @@ botaoAdicionar.addEventListener("click", function(event){
     mensagemErro.innerHTML = ""; // colocamos vazio para ficar em branco a ul
     
 });
+function AdicionaPacienteNaTabela(paciente){
+    //criando uma nova tabela "TR"    
+    var pacienteTr = montaTr(paciente);
+    //Adiciona o novo pacienteTr dentro da tabela
+    var tabela = document.querySelector("#tabela-pacientes");
+    //coloca  o paciente tr na  tabela
+    tabela.appendChild(pacienteTr);
+}
 // função de erros que  recebe o array de erros
 function exibeMensagemDeErro(erros){  // colocamos dentro da funcão o innerHTML para que limpe a ul apos adicionar usuario
     var ul = document.querySelector("#mensagens-erro"); // variavel para editarmos usando innerHTML

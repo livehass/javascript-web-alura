@@ -17,15 +17,24 @@ campoFiltro.addEventListener("input", function(){
             var tdNome = paciente.querySelector(".info-nome");
             // extraimos o conteudo da  td ou seja o nome.
             var nome = tdNome.textContent;
-            // if compara se o nome é diferente do valaor que é digitado
-            if(nome != this.value){                 
-                    paciente.classList.add("invisivel");    //se o nome for diferente do digitado, remove da tela.
-            }else{
-                    paciente.classList.remove("invisivel"); //se não remove a classe invisivel do "css display none"   
+            //expressão regular, no nosso caso usada para procurar nomes no filtro
+            //RegExp é um objesto epecial do js para essa função
+            // o "i" "case insensitive" diz se queremos ignorar letras maiusculas ou não, no nosso caso "sim"
+            var expressao = RegExp(this.value,"i"); 
+                                                                
+            // compara se o nome é diferente do valor que é digitado
+            //a expressão "test" testa se no nome ira ter ou não uma string, e retorna um valor              
+            if(!expressao.test(nome)){ 
+                    //se o nome for diferente do digitado, remove da tela.
+                    paciente.classList.add("invisivel");    
+            }else{  //se não remove a classe invisivel do "css display none"
+                    paciente.classList.remove("invisivel");    
             }
         }
-    }else{ 
-        for(var i = 0; i < pacientes.length ; i++){ // no caso da condição do for acima não ser verdadeira
+        // no caso da condição do for acima não ser verdadeira
+    }else{
+         
+        for(var i = 0; i < pacientes.length ; i++){ 
             var paciente =  pacientes[i];
             paciente.classList.remove("invisivel");
         }
