@@ -5,6 +5,6 @@
 
  [Alura course!](https://cursos.alura.com.br/course/javascript-programando-na-linguagem-web)
  
-[Dependence of Api from loresGarcia!](https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json)
+
 
 
