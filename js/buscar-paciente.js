@@ -5,7 +5,7 @@ botaoAdicionar.addEventListener("click", function(){
     //XMLHttpRequest requisição de dados no js.
     var xhr = new XMLHttpRequest();
     //função que abra a conexão que queremos fazer, tipo "get" para pegar o arquivo
-    xhr.open("get", "https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json");
+    xhr.open("get", "https://gist.githubusercontent.com/livehass/617db24070179e60029b384dc801240f/raw/6eef6086e6ef767eb1a0fa75532fbe930c3d47e8/pacientes.jason");
     //variavel para manipular o erro ao carregar clientes.
     var erroAjax = document.querySelector("#erro-ajax");
     // quando a "xhr" estiver carregada executa uma função
