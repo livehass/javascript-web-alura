@@ -7,4 +7,4 @@
  
 [Dependence of Api from loresGarcia!](https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json)
 
-![Alura web](https://raw.githubusercontent.com/livehass/files/master/download.png)
+
